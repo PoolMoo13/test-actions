@@ -13,4 +13,4 @@ jobs:
       run: |
         DEPLOYED=$([ -z "$()" ] && echo "UNO" || echo "VACIO")
         echo DEPLOYED=$DEPLOYED
-        echo "deployed ${{ $DEPLOYED }}"
+        echo "deployed ${{ DEPLOYED }}"
