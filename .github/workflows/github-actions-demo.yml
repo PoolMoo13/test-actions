@@ -1,5 +1,5 @@
 name: GitHub Actions Demo
-on: [push]
+on: [pull_request]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -12,4 +12,4 @@ jobs:
     - name: read variables
       run: |
       DEPLOYED=$([ -z "${{ steps.vars.outputs.version }}" ] && echo "UNO" || echo "VACIO")
-      echo "deployed ==> ${{ $DEPLOYED }}"
+      echo "deployed ${{ $DEPLOYED }}"
