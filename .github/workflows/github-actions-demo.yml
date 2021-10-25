@@ -12,6 +12,7 @@ jobs:
     - name: read variables
       run: |
         CURRENT_PKG_VERSION=$(pwd)
+        echo "deployed => ${CURRENT_PKG_VERSION}"
         DEPLOYED=$([ -z "${CURRENT_PKG_VERSION}" ] && echo "UNO" || echo "VACIO")
         echo "deployed => ${DEPLOYED}"
 
