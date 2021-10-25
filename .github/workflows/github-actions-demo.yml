@@ -11,7 +11,7 @@ jobs:
         echo ::set-output name=version::
     - name: read variables
       run: |
-        CURRENT_PKG_VERSION=$(jq -r ".version" package.json)
+        CURRENT_PKG_VERSION=$(jq -r ".version" "../../package.json")
         DEPLOYED=$([ -z "${CURRENT_PKG_VERSION}" ] && echo "UNO" || echo "VACIO")
         echo "deployed => ${DEPLOYED}"
 
