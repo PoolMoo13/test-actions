@@ -11,7 +11,8 @@ jobs:
         echo ::set-output name=version::1
     - name: read variables
       id: read
-      run:
+      run: |
         echo ::set-output name=deployed::$([ -z "${{ steps.vars.outputs.version }}" ] && echo "UNO" || echo "VACIO")
     - name: print variables
+      run: |
         echo "deployed ${{ steps.read.outputs.deployed }}"
