@@ -10,7 +10,7 @@ jobs:
         echo ::set-output name:publish::$("false")
         echo ::set-output name:version::$("1")
     - name: read variables
-      run: |
+      run:
         DEPLOYED=$([ -z "$()" ] && echo "UNO" || echo "VACIO")
         echo DEPLOYED=$DEPLOYED
         echo "deployed ${{ DEPLOYED }}"
