@@ -10,10 +10,8 @@ jobs:
         echo ::set-output name=publish::false
         echo ::set-output name=version::
     - name: read variables
-      id: read
       run: |
-        DEPLOYED=$([ -z "${{ steps.vars.outputs.version }}" ] && echo "UNO" || echo "VACIO")
+        CURRENT_PKG_VERSION=$(jq -r ".version" package.json)
+        DEPLOYED=$([ -z "${CURRENT_PKG_VERSION}" ] && echo "UNO" || echo "VACIO")
         echo "deployed => ${DEPLOYED}"
-    - name: print variables
-      run: |
-        echo "deployed ${{ steps.read.outputs.deployed }}"
+
