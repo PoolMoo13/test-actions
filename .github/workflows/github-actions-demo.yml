@@ -1,16 +1,8 @@
 name: GitHub Actions Demo
 on: [pull_request]
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Install
-        run: |
-          npm install    
-
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    needs: build
     steps:
     - name: Set variables
       id: vars
