@@ -7,9 +7,10 @@ jobs:
     - name: Set variables
       id: vars
       run: |
-        echo ::set-output name:publish::$("false")
-        echo ::set-output name:version::$("1")
+        echo ::set-output name=publish::false
+        echo ::set-output name=version::1.0.0
     - name: read variables
       run: |
-      DEPLOYED=$([ -z "${{ steps.vars.outputs.version }}" ] && echo "UNO" || echo "VACIO")
-      echo "deployed ${{ $DEPLOYED }}"
+        DEPLOYED=$([ -z "${{ steps.vars.outputs.version }}" ] && echo $(pwd) || echo ${{ steps.vars.outputs.version }})
+        echo "deployed => ${DEPLOYED}"
+
